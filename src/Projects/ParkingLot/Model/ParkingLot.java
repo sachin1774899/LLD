@@ -1,6 +1,7 @@
 package Projects.ParkingLot.Model;
 
 import Projects.ParkingLot.ENUM.ParkingLotStatus;
+import Projects.ParkingLot.ENUM.VehicleType;
 import Projects.ParkingLot.Service.Strategy.BillGenerateStrategy;
 import Projects.ParkingLot.Service.Strategy.SpotAllocationStrategy;
 
@@ -12,6 +13,7 @@ public class ParkingLot extends BaseModel{
     private int capacity;
     private String address;
     private List<ParkingFloor> parkingFloors;
+    private List<VehicleType> vehicleTypes;
     private ParkingLotStatus parkingLotStatus;
     private BillGenerateStrategy billGenerateStrategy;
     private SpotAllocationStrategy spotAllocationStrategy;
@@ -19,18 +21,16 @@ public class ParkingLot extends BaseModel{
     public ParkingLot() {
     }
 
-    public ParkingLot( String name, int capacity, String address, List<ParkingFloor> parkingFloors, ParkingLotStatus parkingLotStatus, BillGenerateStrategy billGenerateStrategy, SpotAllocationStrategy spotAllocationStrategy) {
-
+    public ParkingLot(String name, int capacity, String address, List<ParkingFloor> parkingFloors, List<VehicleType> vehicleTypes, ParkingLotStatus parkingLotStatus, BillGenerateStrategy billGenerateStrategy, SpotAllocationStrategy spotAllocationStrategy) {
         this.name = name;
         this.capacity = capacity;
         this.address = address;
         this.parkingFloors = parkingFloors;
+        this.vehicleTypes = vehicleTypes;
         this.parkingLotStatus = parkingLotStatus;
         this.billGenerateStrategy = billGenerateStrategy;
         this.spotAllocationStrategy = spotAllocationStrategy;
     }
-
-
 
     public String getName() {
         return name;
@@ -62,6 +62,14 @@ public class ParkingLot extends BaseModel{
 
     public void setParkingFloors(List<ParkingFloor> parkingFloors) {
         this.parkingFloors = parkingFloors;
+    }
+
+    public List<VehicleType> getVehicleTypes() {
+        return vehicleTypes;
+    }
+
+    public void setVehicleTypes(List<VehicleType> vehicleTypes) {
+        this.vehicleTypes = vehicleTypes;
     }
 
     public ParkingLotStatus getParkingLotStatus() {

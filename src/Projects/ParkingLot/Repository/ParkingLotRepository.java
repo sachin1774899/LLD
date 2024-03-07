@@ -6,6 +6,7 @@ import Projects.ParkingLot.Model.ParkingLot;
 import java.util.HashMap;
 
 public class ParkingLotRepository {
+    private static int IdCounter=0;
     private HashMap<Integer, ParkingLot> parkingLotHashMap;
 
     public ParkingLot get(ParkingLot parkingLotId){
@@ -17,6 +18,7 @@ public class ParkingLotRepository {
     }
 
     public void put(ParkingLot parkingLot){
+        parkingLot.setId(++IdCounter);
         parkingLotHashMap.put(parkingLot.getId(), parkingLot);
         System.out.println("ParkingLot has been added Successfully");
     }
