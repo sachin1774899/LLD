@@ -9,6 +9,10 @@ public class ParkingLotRepository {
     private static int IdCounter=0;
     private HashMap<Integer, ParkingLot> parkingLotHashMap;
 
+    public ParkingLotRepository() {
+        this.parkingLotHashMap = new HashMap<>();
+    }
+
     public ParkingLot get(ParkingLot parkingLotId){
         ParkingLot parkingLot =  parkingLotHashMap.get(parkingLotId);
         if(parkingLot == null){

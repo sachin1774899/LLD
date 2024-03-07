@@ -8,6 +8,10 @@ import java.util.HashMap;
 public class ParkingSpotRepository {
     private HashMap<Integer, ParkingSpot> parkingSpotHashMap;
 
+    public ParkingSpotRepository() {
+        this.parkingSpotHashMap = new HashMap<>();
+    }
+
     public ParkingSpot get(ParkingSpot parkingSpotId){
         ParkingSpot parkingSpot = parkingSpotHashMap.get(parkingSpotId);
         if(parkingSpot==null){

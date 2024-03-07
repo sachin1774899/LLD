@@ -8,6 +8,10 @@ import java.util.HashMap;
 public class GateRepository {
     private HashMap<Integer, Gate> gateHashMap;
 
+    public GateRepository() {
+        this.gateHashMap = new HashMap<>();
+    }
+
     public Gate get(Gate gateId){
         Gate gate = gateHashMap.get(gateId);
         if(gate==null){
